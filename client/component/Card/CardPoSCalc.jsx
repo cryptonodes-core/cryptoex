@@ -137,7 +137,7 @@ export default class CardPoSCalc extends React.Component {
             </button>
             </div>
             <div className="mt-2 text-left">
-              {getCarverIcon()} Based on realtime, per-block blockchain rewards data
+              Based on realtime, per-block blockchain rewards data
             </div>
           </div>
         </div>
