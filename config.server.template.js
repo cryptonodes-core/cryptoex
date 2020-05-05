@@ -5,14 +5,14 @@ const secretsConfig = {
   db: {
     host: '127.0.0.1',
     port: '27017',
-    name: 'blockex',
-    user: 'blockexuser',
-    pass: 'Explorer!1'
+    name: 'cryptoex',
+    user: 'cryptoexuser',
+    pass: 'cryptoExplorer!1'
   },
   rpc: {
     host: '127.0.0.1',
-    port: '52541',
-    user: 'bulwarkrpc',
+    port: '34219',
+    user: 'Cryptonodesrpc',
     pass: 'someverysafepassword',
     timeout: 8000, // 8 seconds
   },

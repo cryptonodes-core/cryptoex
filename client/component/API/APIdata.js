@@ -18,12 +18,12 @@ const APIdata = [
       {
         name: 'getAddress [hash]',
         info: 'Returns information for given address.',
-        path: '/api/address/bFY9cyZqZTYHGfduXo7CVNTMiCDeJ1q4gA'
+        path: '/api/address/caNfL8qFkzET535ANG8BKQVWGk8jVygmhS'
       },
       {
         name: 'getBlock [hash] [height]',
         info: 'Returns block information for the given hash or height.',
-        path: '/api/block/00000000000072a98f7d8385809a1f71af983d22efce85e63ec3d75f04412823'
+        path: '/api/block/51977a1138b282338797235cfce21e6f0da0d0d7876a5522dfa456eabac587cc'
       },
       {
         name: 'getBlockAverage',
@@ -48,7 +48,7 @@ const APIdata = [
       {
         name: 'getMasternodeByAddress',
         info: 'Returns masternode information by Wallet Address.',
-        path: '/api/masternode/bJAUCVr24X84c9k6QVuSvdjbuC69S7zMeG'
+        path: '/api/masternode/caNfL8qFkzET535ANG8BKQVWGk8jVygmhS'
       },
       {
         name: 'getMasternodeCount',
@@ -93,7 +93,7 @@ const APIdata = [
       {
         name: 'getTX [hash]',
         info: 'Returns information for the given transaction.',
-        path: '/api/tx/790c2bdeb46189f180d4a83d7b16aa75a75da1b91d117fea7a7ae818239f0137'
+        path: '/api/tx/8da3f4bebda243128fab3bbb82a7a192298082a08b3b789f18d8b72df24784d7'
       },
       {
         name: 'getDifficulty',
@@ -165,17 +165,17 @@ const APIdata = [
       {
         name: 'Transaction (/#/tx/[hash])',
         info: 'Returns transaction information',
-        path: '/#/tx/b1725bcb70b62faa0b273e5385b0225c2ef589bd638cfa582b6cb34f9430d0b9'
+        path: '/#/tx/8da3f4bebda243128fab3bbb82a7a192298082a08b3b789f18d8b72df24784d7'
       },
       {
         name: 'Block (/#/block/[hash|height]',
         info: 'Returns block information.',
-        path: '/#/block/000000000001eb792fe1ac3f901d2373509769f5179d9fe2fd3bf8cb3b6ebec9'
+        path: '/#/block/51977a1138b282338797235cfce21e6f0da0d0d7876a5522dfa456eabac587cc'
       },
       {
         name: 'Address (/#/address/[hash]',
         info: 'Returns address information.',
-        path: '/#/block/000000000001eb792fe1ac3f901d2373509769f5179d9fe2fd3bf8cb3b6ebec9'
+        path: '/#/block/51977a1138b282338797235cfce21e6f0da0d0d7876a5522dfa456eabac587cc'
       },
       // { name: 'qr (qr/[hash]',
       //   info: 'Returns qr code information.',

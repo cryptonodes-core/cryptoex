@@ -42,7 +42,7 @@ export default class CardStatus extends Component {
         <Card className="card--market" title="Market">
           <p className="card__data-main bariol">
             <CountUp
-              decimals={2}
+              decimals={4}
               duration={1}
               end={this.props.usd}
               prefix={`${config.coinDetails.shortName} $`}
@@ -60,7 +60,7 @@ export default class CardStatus extends Component {
                 </span>
                 <span>In {this.props.xAxis.length * 5} minutes</span>
               </p>
-              <p className="card__info-source">Data from CoinMarketCap</p>
+              <p className="card__info-source">Data from Coingecko</p>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-8">
               <GraphLine

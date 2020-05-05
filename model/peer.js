@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 /**
  * Peer
  *
- * The nodes currently connected to the blockex node.
+ * The nodes currently connected to the cryptoex node.
  */
 const Peer = mongoose.model('Peer', new mongoose.Schema({
   __v: { select: false, type: Number },
