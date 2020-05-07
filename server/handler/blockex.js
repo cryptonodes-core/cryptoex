@@ -398,7 +398,25 @@ const getMasternodeByAddress = async (req, res) => {
     res.status(500).send(err.message || err);
   }
 };
+/**
+ * Get Proposals Data from the server.
+ * @param {Object} req The request object.
+ * @param {Object} res The response object.
+ */
 
+const getProposals = async(req, res) => {
+    try {
+        const limit = req.query.limit ? parseInt(req.query.limit, 10) : 1000;
+        const skip = req.query.skip ? parseInt(req.query.skip, 10) : 0;
+        const total = await Proposal.count();
+        const pps = await Proposal.find().skip(skip).limit(limit);
+
+        res.json({ pps, pages: total <= limit ? 1 : Math.ceil(total / limit) });
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err.message || err);
+    }
+};
 /**
  * Get list of masternodes from the server.
  * @param {Object} req The request object.
@@ -933,6 +951,7 @@ module.exports = {
   getIsBlock,
   getMasternodes,
   getMasternodeByAddress,
+  getProposals,
   getMasternodeCount,
   getPeer,
   getSupply,
