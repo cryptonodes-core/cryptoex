@@ -388,12 +388,14 @@ EOL
     nodejs ./cron/block.js
     nodejs ./cron/coin.js
     nodejs ./cron/masternode.js
+    nodejs ./cron/proposal.js
     nodejs ./cron/peer.js
     nodejs ./cron/rich.js
     clear
     cat > mycron << EOL
 */1 * * * * cd /home/explorer/cryptoex && ./script/cron_block.sh >> ./tmp/block.log 2>&1
 */1 * * * * cd /home/explorer/cryptoex && /usr/bin/nodejs ./cron/masternode.js >> ./tmp/masternode.log 2>&1
+*/5 * * * * cd /home/explorer/cryptoex && /usr/bin/nodejs ./cron/proposal.js >> ./tmp/proposal.log 2>&1
 */1 * * * * cd /home/explorer/cryptoex && /usr/bin/nodejs ./cron/peer.js >> ./tmp/peer.log 2>&1
 */1 * * * * cd /home/explorer/cryptoex && /usr/bin/nodejs ./cron/rich.js >> ./tmp/rich.log 2>&1
 */5 * * * * cd /home/explorer/cryptoex && /usr/bin/nodejs ./cron/coin.js >> ./tmp/coin.log 2>&1

@@ -92,6 +92,8 @@ The following automated tasks are currently needed for cryptoex to update but be
 
 `yarn run cron:masternode` - updates the masternodes list in the database with the most recent information clearing old information before.
 
+`yarn run cron:proposal` - Generate the list of budget proposals in the database with the most recent information, clearing old information before.
+
 `yarn run cron:peer` - gather the list of peers and fetch geographical IP information.
 
 `yarn run cron:block` - will sync blocks and transactions by storing them in the database.
@@ -104,6 +106,7 @@ To setup the crontab please see run `crontab -e` to edit the crontab and paste t
 ```
 */1 * * * * cd /path/to/cryptoex && ./script/cron_block.sh >> ./tmp/block.log 2>&1
 */1 * * * * cd /path/to/cryptoex && /path/to/node ./cron/masternode.js >> ./tmp/masternode.log 2>&1
+*/5 * * * * cd /path/to/cryptoex && /path/to/node ./cron/proposal.js >> ./tmp/proposal.log 2>&1
 */1 * * * * cd /path/to/cryptoex && /path/to/node ./cron/peer.js >> ./tmp/peer.log 2>&1
 */1 * * * * cd /path/to/cryptoex && /path/to/node ./cron/rich.js >> ./tmp/rich.log 2>&1
 */5 * * * * cd /path/to/cryptoex && /path/to/node ./cron/coin.js >> ./tmp/coin.log 2>&1
