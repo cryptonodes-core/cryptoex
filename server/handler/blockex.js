@@ -13,6 +13,7 @@ const { CarverAddressType, CarverMovementType, CarverTxType } = require('../../l
 const { CarverAddress, CarverMovement, CarverAddressMovement } = require('../../model/carver2d');
 const Coin = require('../../model/coin');
 const Masternode = require('../../model/masternode');
+const Proposal = require('../../model/proposal');
 const Peer = require('../../model/peer');
 const Rich = require('../../model/rich');
 const { BlockRewardDetails } = require('../../model/blockRewardDetails');
