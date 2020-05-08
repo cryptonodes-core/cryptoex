@@ -170,7 +170,7 @@ class App extends Component {
                   <Route exact path="/coin" component={CoinInfo} />
                   <Route exact path="/faq" component={FAQ} />
                   <Route exact path="/masternode" component={Masternode} />
-				  <Route exact path="/governance" component={ Governance } />
+				          <Route exact path="/governance" component={ Governance } />
                   <Route exact path="/rewards" component={Rewards} />
                   <Route exact path="/movement" component={Movement} />
                   <Route exact path="/peer" component={Peer} />
