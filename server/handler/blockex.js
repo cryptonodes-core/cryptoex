@@ -5,7 +5,6 @@ const moment = require('moment');
 const { rpc } = require('../../lib/cron');
 const cache = require('../lib/cache');
 
-
 // System models for query and etc.
 const Block = require('../../model/block');
 
@@ -45,7 +44,6 @@ const getAddress = async (req, res) => {
       isMasternode,
       carverRewardAddresses
     };
-
 
     // Adds POS averages for an address (if address ever staked)
     const posAddress = carverRewardAddresses.find(carverRewardAddress => carverRewardAddress.label === posAddressLabel);
@@ -346,7 +344,6 @@ const getMasternodes = async (req, res) => {
       }
     }
 
-
     //@todo we can add sorting by balance filter
     const total = await CarverAddress.count(query);
     const carverAddresses = await CarverAddress
@@ -399,25 +396,7 @@ const getMasternodeByAddress = async (req, res) => {
     res.status(500).send(err.message || err);
   }
 };
-/**
- * Get Proposals Data from the server.
- * @param {Object} req The request object.
- * @param {Object} res The response object.
- */
 
-const getProposals = async(req, res) => {
-    try {
-        const limit = req.query.limit ? parseInt(req.query.limit, 10) : 1000;
-        const skip = req.query.skip ? parseInt(req.query.skip, 10) : 0;
-        const total = await Proposal.count();
-        const pps = await Proposal.find().skip(skip).limit(limit);
-
-        res.json({ pps, pages: total <= limit ? 1 : Math.ceil(total / limit) });
-    } catch (err) {
-        console.log(err);
-        res.status(500).send(err.message || err);
-    }
-};
 /**
  * Get list of masternodes from the server.
  * @param {Object} req The request object.
@@ -435,6 +414,25 @@ const getMasternodeCount = async (req, res) => {
     console.log(err);
     res.status(500).send(err.message || err);
   }
+};
+
+/**
+ * Get Proposals Data from the server.
+ * @param {Object} req The request object.
+ * @param {Object} res The response object.
+ */
+const getProposals = async(req, res) => {
+    try {
+        const limit = req.query.limit ? parseInt(req.query.limit, 10) : 1000;
+        const skip = req.query.skip ? parseInt(req.query.skip, 10) : 0;
+        const total = await Proposal.count();
+        const pps = await Proposal.find().skip(skip).limit(limit);
+
+        res.json({ pps, pages: total <= limit ? 1 : Math.ceil(total / limit) });
+    } catch (err) {
+        console.log(err);
+        res.status(500).send(err.message || err);
+    }
 };
 
 /**
@@ -629,6 +627,7 @@ const getTXs = async (req, res) => {
     res.status(500).send(err.message || err);
   }
 };
+
 /**
  * Return pos roi% calculations
  * @param {Object} req The request object.
@@ -746,7 +745,6 @@ const getRewards = async (req, res) => {
     res.status(500).send(err.message || err);
   }
 };
-
 
 /**
  * Return a paginated list of Carver2D Movements.
@@ -894,7 +892,6 @@ const getTXsWeek = () => {
   };
 };
 
-
 const sendrawtransaction = async (req, res) => {
   try {
     if (!req.body.rawtx) {
@@ -939,7 +936,6 @@ const login = async (req, res) => {
     res.status(500).json({ error: (!!err.message ? JSON.parse(err.message) : err) });
   }
 };
-
 
 module.exports = {
   getAddress,
