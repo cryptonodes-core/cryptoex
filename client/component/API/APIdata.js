@@ -61,6 +61,11 @@ const APIdata = [
         path: '/api/masternode/average'
       },
       {
+		    name: 'getProposals',
+		    info: 'Returns current Governance proposals',
+		    path: '/api/proposals'
+	    },
+      {
         name: 'getPeer',
         info: 'Returns peer information.',
         path: '/api/peer'
